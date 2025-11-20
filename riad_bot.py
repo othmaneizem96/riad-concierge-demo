@@ -15,10 +15,10 @@ try:
     with open('riads_config.json', 'r', encoding='utf-8') as f:
         RIADS_CONFIG = json.load(f)
 except FileNotFoundError:
-    st.error("Erreur : Le fichier 'riads_config.json' est introuvable.")
+    st.error("Erreur : Le fichier 'riads_config.json' est introuvable. Veuillez le créer et le téléverser sur GitHub.")
     st.stop()
 except json.JSONDecodeError:
-    st.error("Erreur : Le fichier 'riads_config.json' est mal formaté.")
+    st.error("Erreur : Le fichier 'riads_config.json' est mal formaté (syntaxe JSON, virgule manquante ou excédentaire).")
     st.stop()
 
 # --- 2. DÉTECTION DU RIAD CLIENT (Via l'URL) ---
@@ -29,7 +29,7 @@ riad_id = st.query_params.get('riad_id', ['othmane_riad'])[0]
 
 # Vérifier si cet ID existe dans notre configuration
 if riad_id not in RIADS_CONFIG:
-    st.error(f"Erreur : L'ID de Riad '{riad_id}' n'existe pas dans la base de données.")
+    st.error(f"Erreur : L'ID de Riad '{riad_id}' n'existe pas dans la base de données (riads_config.json).")
     st.stop()
 
 # Charger les données spécifiques au Riad
@@ -69,12 +69,13 @@ Knowledge Base:
 try:
     client = genai.Client(api_key=API_KEY)
 except Exception as e:
+    # Cette erreur indique que la clé API n'est pas dans Streamlit Secrets
     st.error("Erreur de connexion à l'API Gemini. Vérifiez votre GEMINI_API_KEY dans Streamlit Secrets.")
     st.stop()
 
 st.set_page_config(page_title=f"Aisha - Concierge IA pour {RIAD_NAME}", layout="centered")
 st.title(f"Welcome to {RIAD_NAME} 🐪")
-st.caption(f"Votre concierge virtuelle 24/7. Envoyez un message !")
+st.caption(f"Votre concierge virtuelle 24/7 pour {RIAD_CITY}. Envoyez un message !")
 
 # Initialiser la session de chat
 if "chat_session" not in st.session_state:
@@ -101,5 +102,6 @@ if user_prompt := st.chat_input("Posez votre question (en Darija, Français, Ang
                 response = st.session_state.chat_session.send_message(user_prompt)
                 st.markdown(response.text)
             except Exception as e:
-                st.error(f"Une erreur s'est produite : {e}")
+                st.error(f"Une erreur s'est produite lors de l'envoi du message : {e}")
+
 
