@@ -19,10 +19,10 @@
     "tours_info": "Our popular tours are Sunset Quad Biking (400dh per quad) and the Overnight Desert Camp (600dh per person, dinner included). We also arrange transfers to Marrakech (700dh per person)."
   }
 
-  // NOTE IMPORTANTE : N'oubliez pas la virgule après l'accolade fermante du Riad précédent !
+ 
   ,
 
-  "riad_client_3": { // <-- NOUVEL ID UNIQUE : IMPORTANT
+  "riad_client_3": { 
     "name": "Riad Lalla Fatima", 
     "city": "Essaouira",
     "whatsapp": "+212 6XX XXX XXX", 
@@ -34,4 +34,5 @@
 
   
 }
+
 
