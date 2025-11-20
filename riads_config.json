@@ -23,14 +23,15 @@
   ,
 
   "riad_client_3": { // <-- NOUVEL ID UNIQUE : IMPORTANT
-    "name": "Riad Lalla Fatima", // <-- Nom du Riad 3
+    "name": "Riad Lalla Fatima", 
     "city": "Essaouira",
-    "whatsapp": "+212 6XX XXX XXX", // <-- Numéro du Riad 3
+    "whatsapp": "+212 6XX XXX XXX", 
     "location": "In the Essaouira Kasbah, 5 minutes walk from the port.",
     "breakfast_info": "Available à la carte from 9:00 AM to 11:00 AM. Free for guests.",
     "wifi_info": "Network 'LallaGuest', Password 'Mogador99'.",
     "tours_info": "We offer kite surfing lessons (450dh per hour) and horse riding on the beach (200dh)."
   }
 
-  // ... continuez jusqu'à 30 ...
+  
 }
+
