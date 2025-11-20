@@ -28,21 +28,8 @@
     "wifi_info": "Network 'LallaGuest', Password 'Mogador99'.",
     "tours_info": "We offer kite surfing lessons (450dh per hour) and horse riding on the beach (200dh)."
   }
-  
-  // <-- C'EST ICI QUE VOUS AJOUTEZ VOS 27 AUTRES ENTRÉES.
-  // REMARQUE : SI VOUS AJOUTEZ UNE ENTRÉE CI-DESSOUS, 
-  // VOUS DEVEZ METTRE UNE VIRGULE APRÈS L'ACCOLADE FERMANTE DU "riad_client_3" !
-  
-  /* Exemple pour le 4ème client :
-  , 
-  "riad_client_4": { 
-      "name": "Riad Atlas", 
-      //... autres informations ... 
-  }
-  
-  // NOTE FINALE : PAS DE VIRGULE APRÈS LA TOUTE DERNIÈRE ENTRÉE !
-  */
 }
+
 
 
 
